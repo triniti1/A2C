@@ -1,0 +1,27 @@
+
+services:
+  api:
+    build:
+      context: ./A2C.CRM.Api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: a2c_crm
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

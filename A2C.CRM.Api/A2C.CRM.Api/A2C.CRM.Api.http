@@ -1,0 +1,6 @@
+@A2C.CRM.Api_HostAddress = http://localhost:5003
+
+GET {{A2C.CRM.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
