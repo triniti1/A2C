@@ -73,27 +73,26 @@ namespace A2C.CRM.Api.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            // Check is the user already exists
             if (await _context.Users.AnyAsync(u => u.Email == request.Email))
-            {
                 return BadRequest("User with this email already exists.");
-            }
 
             // Create a new user
             var user = new User
             {
                 Name = request.Name,
                 Email = request.Email,
-                PasswordHash = HashPassword(request.Password),
                 Role = "User"
             };
 
-            // Add the user to the database
+            // Hash the password using PasswordHasher
+            user.PasswordHash = _passwordHasher.HashPassword(user, request.Password);
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return Ok(new { user.Id, user.Name, user.Email });
         }
+
 
         private string HashPassword(string password)
         {

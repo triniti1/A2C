@@ -3,44 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\migrations\\20250809102236_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\migrations\\20250809102236_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\a2c.crm.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\a2c.crm.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\migrations\\20250809102236_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\migrations\\20250809102236_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|c:\\users\\gile\\source\\repos\\triniti1\\root\\a2c\\a2c.crm.api\\a2c.crm.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{918D491B-E502-41B8-8678-19871040DE9E}|A2C.CRM.Api\\A2C.CRM.Api.csproj|solutionrelative:a2c.crm.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,33 +62,59 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "A2C.CRM.Api.http",
+              "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\A2C.CRM.Api.http",
+              "RelativeDocumentMoniker": "A2C.CRM.Api\\A2C.CRM.Api.http",
+              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\A2C.CRM.Api.http",
+              "RelativeToolTip": "A2C.CRM.Api\\A2C.CRM.Api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-08-10T18:12:38.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\DTOs\\LoginRequest.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\DTOs\\LoginRequest.cs",
               "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\DTOs\\LoginRequest.cs",
               "RelativeToolTip": "A2C.CRM.Api\\DTOs\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T17:18:54.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Controllers\\AuthController.cs*",
-              "RelativeToolTip": "A2C.CRM.Api\\Controllers\\AuthController.cs*",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAACgAAAAjAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "A2C.CRM.Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T11:28:47.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "A2C.CRM.Api\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "A2C.CRM.Api\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T10:03:44.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\DTOs\\RegisterRequest.cs",
@@ -93,93 +127,97 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Dockerfile",
+              "RelativeDocumentMoniker": "A2C.CRM.Api\\Dockerfile",
+              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Dockerfile",
+              "RelativeToolTip": "A2C.CRM.Api\\Dockerfile",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-09T09:10:43.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\Migrations\\AppDbContextModelSnapshot.cs",
               "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeToolTip": "A2C.CRM.Api\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T10:23:13.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "20250809102236_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Migrations\\20250809102236_InitialCreate.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\Migrations\\20250809102236_InitialCreate.cs",
               "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Migrations\\20250809102236_InitialCreate.cs",
               "RelativeToolTip": "A2C.CRM.Api\\Migrations\\20250809102236_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAqwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T10:22:59.759Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\appsettings.json",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\appsettings.json",
               "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\appsettings.json",
               "RelativeToolTip": "A2C.CRM.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-08-09T10:14:22.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Program.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Program.cs",
-              "RelativeToolTip": "A2C.CRM.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABGAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Program.cs*",
+              "RelativeToolTip": "A2C.CRM.Api\\Program.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAApwB8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T10:10:46.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "A2C.CRM.Api\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "A2C.CRM.Api\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T10:03:44.638Z",
+              "DocumentIndex": 11,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "A2C.CRM.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "A2C.CRM.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-10T18:06:33.526Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Models\\User.cs",
               "RelativeDocumentMoniker": "A2C.CRM.Api\\Models\\User.cs",
               "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Models\\User.cs",
               "RelativeToolTip": "A2C.CRM.Api\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T09:58:23.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Dockerfile",
-              "RelativeDocumentMoniker": "A2C.CRM.Api\\Dockerfile",
-              "ToolTip": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\Dockerfile",
-              "RelativeToolTip": "A2C.CRM.Api\\Dockerfile",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwBIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-09T09:10:43.635Z",
               "EditorCaption": ""
             }
           ]

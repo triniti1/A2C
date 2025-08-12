@@ -8,6 +8,8 @@ out/
 *.suo
 *.userosscache
 *.sln.docstates
+*.env
+.env
 
 # Visual Studio cache/options directory
 .vs/

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3KPy3sICtb4=",
+  "dgSpecHash": "KyfHAv2V6GM=",
   "success": true,
   "projectFilePath": "C:\\Users\\gile\\source\\repos\\triniti1\\Root\\A2C\\A2C.CRM.Api\\A2C.CRM.Api\\A2C.CRM.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gile\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\gile\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.build.locator\\1.7.8\\microsoft.build.locator.1.7.8.nupkg.sha512",
@@ -34,6 +35,8 @@
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.13.1\\microsoft.identitymodel.abstractions.8.13.1.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.13.1\\microsoft.identitymodel.jsonwebtokens.8.13.1.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.identitymodel.logging\\8.13.1\\microsoft.identitymodel.logging.8.13.1.nupkg.sha512",
+    "C:\\Users\\gile\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.0.3\\microsoft.identitymodel.protocols.7.0.3.nupkg.sha512",
+    "C:\\Users\\gile\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.0.3\\microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.13.1\\microsoft.identitymodel.tokens.8.13.1.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\gile\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512",
