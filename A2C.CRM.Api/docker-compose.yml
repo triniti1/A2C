@@ -10,7 +10,10 @@ services:
       - db
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Development    
+    networks:
+      - a2cnet
+
 
   db:
     image: postgres:15
@@ -22,7 +25,14 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data  
+    networks:
+      - a2cnet
+
 
 volumes:
   pgdata:
+
+networks:
+  a2cnet:
+    driver: bridge
