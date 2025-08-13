@@ -28,7 +28,9 @@ namespace A2C.CRM.Api.Controllers
             _configuration = configuration;
         }
 
-
+        // 1. Check if user exists
+        // 2. Password authontication
+        // 3. Generate JWT token
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
@@ -70,6 +72,12 @@ namespace A2C.CRM.Api.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+
+        // 1. Check if user with this email already exists
+        // 2. Create a new user
+        // 3. Hash the password using PasswordHasher
+        // 4. Add the user to the database
+        // 5. Return user information
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {

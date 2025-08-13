@@ -10,6 +10,7 @@ services:
       - db
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
+      - ASPNETCORE_ENVIRONMENT=Development
 
   db:
     image: postgres:15
