@@ -11,5 +11,6 @@ namespace A2C.CRM.Api.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
     }
 }

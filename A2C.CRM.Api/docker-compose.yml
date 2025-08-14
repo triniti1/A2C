@@ -1,38 +1,58 @@
 
 services:
+  # Main API service for the CRM application
   api:
     build:
-      context: ./A2C.CRM.Api
-      dockerfile: Dockerfile
+      context: ./A2C.CRM.Api         # Path to the API project
+      dockerfile: Dockerfile         # Dockerfile used to build the API image
     ports:
-      - "8080:80"
+      - "8080:80"                    # Maps port 80 in the container to port 8080 on the host
     depends_on:
-      - db
+      - db                           # Ensures the database starts before the API
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
-      - ASPNETCORE_ENVIRONMENT=Development    
+      - ASPNETCORE_ENVIRONMENT=Docker
     networks:
-      - a2cnet
+      - a2cnet                       # Connects the service to the custom bridge network
 
-
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_DB: a2c_crm
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - "5432:5432"
+  # EF CLI container used for running migrations and other EF Core commands
+  ef:
+    build:
+      context: ./A2C.CRM.Api         # Same context as the API to access the project files
+      dockerfile: Dockerfile.ef      # Dockerfile specifically for EF CLI
+    entrypoint: ["bash"]             # Starts a bash shell for interactive use
+    stdin_open: true                 # Keeps STDIN open for interactive commands
+    tty: true                        # Allocates a pseudo-TTY
     volumes:
-      - pgdata:/var/lib/postgresql/data  
+      - ./A2C.CRM.Api:/app           # Mounts the project directory into the container
+    depends_on:
+      - db                           # Ensures the database is available before EF commands run
+    networks:
+      - a2cnet
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
+      - ASPNETCORE_ENVIRONMENT=Docker
+
+  # PostgreSQL database service
+  db:
+    image: postgres:15               # Uses official PostgreSQL version 15 image
+    restart: always                  # Automatically restarts the container if it crashes
+    environment:
+      POSTGRES_DB: a2c_crm           # Name of the database to create
+      POSTGRES_USER: postgres        # Username for the database
+      POSTGRES_PASSWORD: postgres    # Password for the database
+    ports:
+      - "5432:5432"                  # Maps container port 5432 to host port 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persists database data between container restarts
     networks:
       - a2cnet
 
-
+# Named volume for persisting PostgreSQL data
 volumes:
   pgdata:
 
+# Custom bridge network for internal communication between services
 networks:
   a2cnet:
     driver: bridge

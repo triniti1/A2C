@@ -1,0 +1,21 @@
+
+# Use official .NET SDK image
+FROM mcr.microsoft.com/dotnet/sdk:8.0.100
+
+# Set working directory
+WORKDIR /app
+
+# Ensure the global tools path is available
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+COPY appsettings.Docker.json ./
+
+# Print SDK info to verify it's available
+RUN dotnet --info
+
+# Install dotnet-ef globally
+RUN dotnet tool install --global dotnet-ef
+
+# Verify installation
+RUN dotnet ef --version
+Tool 'dotnet-ef' is already installed.

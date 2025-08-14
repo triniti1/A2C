@@ -49,6 +49,14 @@ namespace A2C.CRM.Api
 
 
             var app = builder.Build();
+            
+            // Create seed roles in database
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                DbSeeder.SeedRoles(dbContext);
+            }
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -64,6 +72,11 @@ namespace A2C.CRM.Api
             app.UseAuthorization();
 
             app.MapControllers();
+
+            // Log the environment and connection string
+            Console.WriteLine($"Loaded environment: {builder.Environment.EnvironmentName}");
+            Console.WriteLine($"Connection string: {builder.Configuration.GetConnectionString("DefaultConnection")}");
+
 
             app.Run();
         }
