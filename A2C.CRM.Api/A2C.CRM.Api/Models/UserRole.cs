@@ -2,9 +2,9 @@
 {
     public enum RoleType
     {
-        User,
-        Admin,
-        SuperUser
+        User = 0,
+        Admin = 1,
+        SuperUser = 2
     }
 
     public class UserRole

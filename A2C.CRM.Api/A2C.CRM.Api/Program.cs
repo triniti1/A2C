@@ -1,7 +1,8 @@
 
 using A2C.CRM.Api.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -10,6 +11,19 @@ namespace A2C.CRM.Api
 
     public class Program
     {
+
+        /*static void TempCreateHash()
+        {
+            // This method is just a placeholder to create a hash for the admin user password.
+            // In a real application, you would use a proper hashing mechanism.
+
+            var passwordHasher = new PasswordHasher<object>();
+            var hashedPassword = passwordHasher.HashPassword(null, "admin");
+
+            Console.WriteLine("Hashed password:");
+            Console.WriteLine(hashedPassword);
+        }*/
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +36,7 @@ namespace A2C.CRM.Api
 
             // Configure Entity Framework Core with PostgreSQL
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+           // TempCreateHash();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(connectionString));

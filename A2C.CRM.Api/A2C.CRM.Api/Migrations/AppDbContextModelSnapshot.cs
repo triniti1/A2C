@@ -43,11 +43,7 @@ namespace A2C.CRM.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid?>("UserRoleId")
+                    b.Property<Guid>("UserRoleId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -55,6 +51,17 @@ namespace A2C.CRM.Api.Migrations
                     b.HasIndex("UserRoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            CreatedAt = new DateTime(2025, 8, 15, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Email = "admin@a2c.local",
+                            Name = "Admin",
+                            PasswordHash = "admin",
+                            UserRoleId = new Guid("11111111-1111-1111-1111-111111111111")
+                        });
                 });
 
             modelBuilder.Entity("A2C.CRM.Api.Models.UserRole", b =>
@@ -69,13 +76,34 @@ namespace A2C.CRM.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            RoleName = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            RoleName = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
+                            RoleName = 2
+                        });
                 });
 
             modelBuilder.Entity("A2C.CRM.Api.Models.User", b =>
                 {
-                    b.HasOne("A2C.CRM.Api.Models.UserRole", null)
+                    b.HasOne("A2C.CRM.Api.Models.UserRole", "UserRole")
                         .WithMany("Users")
-                        .HasForeignKey("UserRoleId");
+                        .HasForeignKey("UserRoleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("UserRole");
                 });
 
             modelBuilder.Entity("A2C.CRM.Api.Models.UserRole", b =>

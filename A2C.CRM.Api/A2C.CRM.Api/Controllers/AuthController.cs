@@ -34,9 +34,14 @@ namespace A2C.CRM.Api.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
-            var user = _context.Users.SingleOrDefault(u => u.Email == request.Email);
+            var user = _context.Users
+                .Include(u => u.UserRole) // Include UserRole to access RoleName
+                .SingleOrDefault(u => u.Email == request.Email);
             if (user == null)
                 return Unauthorized("Invalid credentials");
+
+            if (user.UserRole == null)
+                return Unauthorized("Invalid User role");
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, request.Password);
             if (result == PasswordVerificationResult.Failed)
@@ -53,7 +58,7 @@ namespace A2C.CRM.Api.Controllers
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.UserRole.RoleName.ToString())
             };
             // Generate a JWT token
             // Using secret key to signing the token credentials that exist only on the server
@@ -89,7 +94,9 @@ namespace A2C.CRM.Api.Controllers
             {
                 Name = request.Name,
                 Email = request.Email,
-                Role = "User"
+                CreatedAt = DateTime.UtcNow,
+                UserRoleId = Guid.NewGuid(), // This should be set based on the role type
+                UserRole = new UserRole { RoleName = request.Role ?? RoleType.User } // Default to User if not specified
             };
 
             // Hash the password using PasswordHasher
