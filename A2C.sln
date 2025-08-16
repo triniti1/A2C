@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A2C.CRM.Api", "A2C.CRM.Api\A2C.CRM.Api.csproj", "{918D491B-E502-41B8-8678-19871040DE9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "Server\AuthService\AuthService.csproj", "{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{918D491B-E502-41B8-8678-19871040DE9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{918D491B-E502-41B8-8678-19871040DE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{918D491B-E502-41B8-8678-19871040DE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{918D491B-E502-41B8-8678-19871040DE9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
