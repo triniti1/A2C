@@ -3,14 +3,14 @@ services:
     image: mcr.microsoft.com/dotnet/sdk:8.0
     volumes:
       - .:/app
-    working_dir: /app/A2C.CRM.Api
+    working_dir: /app/Server/AuthService
     depends_on:
       - db
     networks:
       - a2cnet
     entrypoint: >
-      bash -c "dotnet tool install --global dotnet-ef &&
-               /root/.dotnet/tools/dotnet-ef database update --project /app/A2C.CRM.Api"
+      bash -c "dotnet tool list -g | grep dotnet-ef || dotnet tool install --global dotnet-ef &&
+           dotnet ef database update --project /app/Server/AuthService/AuthService.csproj"
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
       - ASPNETCORE_ENVIRONMENT=Docker
