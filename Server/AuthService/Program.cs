@@ -28,6 +28,17 @@ namespace A2C.CRM.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowReactApp",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
+
             // Add services to the container.
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -80,7 +91,16 @@ namespace A2C.CRM.Api
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            // Ensure Kestrel listens on all network interfaces inside the container
+            // This allows other Docker containers (e.g., the React client) to access the API
+            //app.Urls.Add("http://localhost:32774");
+
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
+
+            app.UseCors("AllowReactApp");
 
             // Use Authentication and Authorization middleware
             app.UseAuthentication();
@@ -92,6 +112,12 @@ namespace A2C.CRM.Api
             Console.WriteLine($"Loaded environment: {builder.Environment.EnvironmentName}");
             Console.WriteLine($"Connection string: {builder.Configuration.GetConnectionString("DefaultConnection")}");
 
+            var addresses = app.Urls;
+            Console.WriteLine("Kestrel is listening on:");
+            foreach (var url in addresses)
+            {
+                Console.WriteLine(url);
+            }
 
             app.Run();
         }

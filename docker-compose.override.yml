@@ -14,3 +14,10 @@ services:
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
       - ASPNETCORE_ENVIRONMENT=Docker
+   
+ # client:
+ #   volumes:
+ #     - ./Client:/app
+ #   environment:
+ #     - CHOKIDAR_USEPOLLING=true  # watch mode if using React
+
