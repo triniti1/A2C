@@ -6,21 +6,23 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../store/AuthContext';  
 
-// Define the shape of the form data
 type LoginFormInputs = {
   email: string;
   password: string;
 };
 
-// Define validation schema using Yup
 const schema = yup.object().shape({
   email: yup.string().email('Invalid email address').required('Email is required'),
-  password: yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+  password: yup.string().min(5, 'Password must be at least 5 characters').required('Password is required'),
 });
 
 export default function Login() {
-  // Initialize the form with validation
+  const { login } = useAuth();   // Acceasas to login from the context
+  const navigate = useNavigate();  
+
   const {
     register,
     handleSubmit,
@@ -29,29 +31,25 @@ export default function Login() {
     resolver: yupResolver(schema),
   });
 
+  const onSubmit = async (data: LoginFormInputs) => {
+    try {
+      const url = `${process.env.REACT_APP_API_BASE_URL}/api/auth/login`;
+      const response = await axios.post(url, data);
+      const token = response.data.token;
 
-const onSubmit = async (data: LoginFormInputs) => {
-  try {
+      // שמירה ב־context + localStorage
+      login(token);
 
-    const url = `${process.env.REACT_APP_API_BASE_URL}/api/auth/login`;
-   
-    //console.log('onSubmit url is:', url);
-    const response = await axios.post(url, data);
-    const token = response.data.token;
+      toast.success('Login successful!');
+      console.log('Token saved:', token);
 
-    // Save token to localStorage
-    localStorage.setItem('authToken', token);
-
-    toast.success('Login successful!');
-    console.log('Token saved:', token);
-
-    // TODO: Redirect to another page
-  } catch (error: any) {
-    toast.error('Login failed. Please check your credentials.');
-    console.error('Login error:', error);
-  }
-};
-
+      // מעבר ל־WelcomePage
+      navigate('/welcome');
+    } catch (error: any) {
+      toast.error('Login failed. Please check your credentials.');
+      console.error('Login error:', error);
+    }
+  };
 
   return (
     <Container maxWidth="xs">
