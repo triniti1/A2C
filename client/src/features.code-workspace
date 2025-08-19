@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "features"
+		},
+		{
+			"path": "store"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

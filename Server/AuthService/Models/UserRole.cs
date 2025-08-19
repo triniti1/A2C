@@ -12,7 +12,5 @@
         public Guid Id { get; set; } = Guid.NewGuid();
 
         public RoleType RoleName { get; set; } = RoleType.User;
-
-        public ICollection<User> Users { get; set; } = new List<User>();
     }
 }

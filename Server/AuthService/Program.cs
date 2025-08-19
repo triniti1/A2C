@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Data.Common;
 using System.Text;
 
 namespace A2C.CRM.Api
@@ -26,100 +27,100 @@ namespace A2C.CRM.Api
 
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            builder.Services.AddCors(options =>
+            try
             {
-                options.AddPolicy("AllowReactApp",
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:3000")
-                               .AllowAnyHeader()
-                               .AllowAnyMethod();
-                    });
-            });
+                var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            // Configure Entity Framework Core with PostgreSQL
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-           // TempCreateHash();
-
-            builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseNpgsql(connectionString));
-
-            // Add Authentication and Authorization
-            builder.Services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
+                builder.Services.AddCors(options =>
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                    ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-                };
-            });
+                    options.AddPolicy("AllowReactApp",
+                        builder =>
+                        {
+                            builder.WithOrigins("http://localhost:3000")
+                                   .AllowAnyHeader()
+                                   .AllowAnyMethod();
+                        });
+                });
 
-            builder.Services.AddAuthorization();
+                // Add services to the container.
+                builder.Services.AddControllers();
+                // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+                builder.Services.AddEndpointsApiExplorer();
+                builder.Services.AddSwaggerGen();
 
+                // Configure Entity Framework Core with PostgreSQL
+                var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+                // TempCreateHash();
 
-            var app = builder.Build();
-            
-            // Create seed roles in database
-            using (var scope = app.Services.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-                DbSeeder.SeedRoles(dbContext);
+                builder.Services.AddDbContext<AppDbContext>(options =>
+                    options.UseNpgsql(connectionString));
+
+                // Add Authentication and Authorization
+                builder.Services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                }).AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                        ValidAudience = builder.Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                    };
+                });
+
+                builder.Services.AddAuthorization();
+
+                var app = builder.Build();
+
+                // Configure the HTTP request pipeline.
+                if (app.Environment.IsDevelopment())
+                {
+                    app.UseSwagger();
+                    app.UseSwaggerUI();
+                }
+
+                // Ensure Kestrel listens on all network interfaces inside the container
+                // This allows other Docker containers (e.g., the React client) to access the API
+                //app.Urls.Add("http://localhost:32774");
+
+                if (!app.Environment.IsDevelopment())
+                {
+                    app.UseHttpsRedirection();
+                }
+
+                app.UseCors("AllowReactApp");
+
+                // Use Authentication and Authorization middleware
+                app.UseAuthentication();
+                app.UseAuthorization();
+
+                app.MapControllers();
+
+                // Log the environment and connection string
+                Console.WriteLine($"Loaded environment: {builder.Environment.EnvironmentName}");
+                Console.WriteLine($"Connection string: {builder.Configuration.GetConnectionString("DefaultConnection")}");
+
+                var addresses = app.Urls;
+                Console.WriteLine("Kestrel is listening on:");
+                foreach (var url in addresses)
+                {
+                    Console.WriteLine(url);
+                }
+
+                app.Run();
             }
-
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            catch (Exception ex)
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                Console.WriteLine(ex.StackTrace);
+                throw;
             }
-
-            // Ensure Kestrel listens on all network interfaces inside the container
-            // This allows other Docker containers (e.g., the React client) to access the API
-            //app.Urls.Add("http://localhost:32774");
-
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseHttpsRedirection();
-            }
-
-            app.UseCors("AllowReactApp");
-
-            // Use Authentication and Authorization middleware
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.MapControllers();
-
-            // Log the environment and connection string
-            Console.WriteLine($"Loaded environment: {builder.Environment.EnvironmentName}");
-            Console.WriteLine($"Connection string: {builder.Configuration.GetConnectionString("DefaultConnection")}");
-
-            var addresses = app.Urls;
-            Console.WriteLine("Kestrel is listening on:");
-            foreach (var url in addresses)
-            {
-                Console.WriteLine(url);
-            }
-
-            app.Run();
         }
     }
 }

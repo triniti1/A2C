@@ -28,6 +28,33 @@ namespace A2C.CRM.Api.Controllers
             _configuration = configuration;
         }
 
+        // GET: api/users
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
+        {
+            // שלוף את כל המשתמשים עם UserRole
+            var users = await _context.Users
+                .Include(u => u.UserRole)
+                .AsNoTracking() // מומלץ כשאין צורך בשינוי הנתונים
+                .ToListAsync();
+
+            // המר ל-DTO עם Role כמחרוזת
+            var userDtos = users.Select(u => new UserDto
+            {
+                Id = u.Id,
+                Name = u.Name,
+                Email = u.Email,
+                CreatedAt = u.CreatedAt,
+                Role = u.UserRole?.RoleName.ToString() ?? "Unknown"
+            }).ToList();
+
+            return Ok(userDtos);
+
+
+
+           // return Ok(users);
+        }
+
         // 1. Check if user exists
         // 2. Password authontication
         // 3. Generate JWT token
