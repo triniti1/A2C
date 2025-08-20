@@ -55,11 +55,17 @@ namespace A2C.CRM.Api.Controllers
            // return Ok(users);
         }
 
-        // 1. Check if user exists
-        // 2. Password authontication
-        // 3. Generate JWT token
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest request)
+        /*[HttpPost("delete_user")]
+        public IActionResult DeleteUser([FromBody] LoginRequest request)
+        {
+            return Ok(new { user.Id, user.Name, user.Email });
+        }*/
+
+            // 1. Check if user exists
+            // 2. Password authontication
+            // 3. Generate JWT token
+            [HttpPost("login")]
+        public IActionResult Login([FromBody] UserLoginRequest request)
         {
             var user = _context.Users
                 .Include(u => u.UserRole) // Include UserRole to access RoleName
@@ -111,7 +117,7 @@ namespace A2C.CRM.Api.Controllers
         // 4. Add the user to the database
         // 5. Return user information
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterRequest request)
+        public async Task<IActionResult> Register(UserRegisterRequest request)
         {
             if (await _context.Users.AnyAsync(u => u.Email == request.Email))
                 return BadRequest("User with this email already exists.");

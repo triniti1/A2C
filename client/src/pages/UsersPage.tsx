@@ -13,11 +13,14 @@ interface User {
   role: string;
 }
 
+ const url = `${process.env.REACT_APP_API_BASE_URL}/api/auth`;
+
 const UsersPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:32774/api/Auth") // adjust port if needed
+    //http://localhost:32774/api/Auth"
+    fetch(url) // adjust port if needed
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error("Error fetching users:", err));
