@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./features/auth/Login";
-import WelcomePage from "./features/Welcome/WelcomePage"
-import withAuthGuard from "./store/withAuthGuard";
+import Login from "./pages/LoginPage";
 import UsersPage from "./pages/UsersPage";
+import WelcomePage from "./pages/WelcomePage"
+import withAuthGuard from "./store/withAuthGuard";
+
 import { AuthProvider } from "./store/AuthContext";
 
 const ProtectedWelcome = withAuthGuard(WelcomePage);

@@ -1,5 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { useAuth } from "../../store/AuthContext";
+import { useAuth } from "../store/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function WelcomePage() {

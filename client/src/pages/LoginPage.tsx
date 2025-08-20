@@ -7,7 +7,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../store/AuthContext';  
+import { useAuth } from '../store/AuthContext';  
 
 type LoginFormInputs = {
   email: string;
@@ -90,3 +90,4 @@ export default function Login() {
     </Container>
   );
 }
+
