@@ -1,73 +1,77 @@
+version: '3.9'
 
 services:
-  # Main API service for the CRM application
-  api:
-    build:
-      context: ./Server/AuthService     # Path to the API project
-      dockerfile: Dockerfile            # Dockerfile used to build the API image
-    ports:
-       - "32774:8080"   # 8080 inside the container -> 32774 on the local machine
-    depends_on:
-      - db                              # Ensures the database starts before the API
-    environment:
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
-      - ASPNETCORE_ENVIRONMENT=Docker
-    networks:
-      - a2cnet                          # Connects the service to the custom bridge network
-
-  # EF CLI container used for running migrations and other EF Core commands
-  ef:
-    build:
-      context: ./Server/AuthService     # Same context as the API to access the project files
-      dockerfile: Dockerfile.ef         # Dockerfile specifically for EF CLI
-    entrypoint: ["bash"]                # Starts a bash shell for interactive use
-    stdin_open: true                    # Keeps STDIN open for interactive commands
-    tty: true                           # Allocates a pseudo-TTY
-    volumes:
-      - ./Server/AuthService:/app       # Mounts the project directory into the container
-    depends_on:
-      - db                              # Ensures the database is available before EF commands run
-    networks:
-      - a2cnet
-    environment:
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
-      - ASPNETCORE_ENVIRONMENT=Docker
-
-  # PostgreSQL database service
+  # PostgreSQL database
   db:
-    image: postgres:15                  # Uses official PostgreSQL version 15 image
-    restart: always                     # Automatically restarts the container if it crashes
+    image: postgres:15
+    container_name: a2c_db
+    restart: always
     environment:
-      POSTGRES_DB: a2c_crm              # Name of the database to create
-      POSTGRES_USER: postgres           # Username for the database
-      POSTGRES_PASSWORD: postgres       # Password for the database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: a2cdb
     ports:
-      - "5432:5432"                     # Maps container port 5432 to host port 5432
+      - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data # Persists database data between container restarts
+      - db_data:/var/lib/postgresql/data
     networks:
-      - a2cnet
-  # React client application      
-  #client:
-  #  build:
-  #    context: ./Client
-  #    dockerfile: Dockerfile
-  #  container_name: a2c-client
-  #  ports:
-  #    - "3000:80"  # nginx is the external port, it's the 80 port of 3000
-  #  networks:
-  #    - a2cnet
-  #  depends_on:
-  #    - api
-  #  environment:
-  #    - REACT_APP_API_BASE_URL=http://api:8080
+      - a2c_network
 
+  # EF CLI container for migrations
+  ef:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: ef
+    volumes:
+      - ./Server/AuthService:/app
+    working_dir: /app
+    entrypoint: >
+      bash -c "dotnet tool list -g | grep dotnet-ef || dotnet tool install --global dotnet-ef &&
+               dotnet ef database update --project AuthService.csproj"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2cdb;Username=postgres;Password=postgres
+      - ASPNETCORE_ENVIRONMENT=Docker
+    networks:
+      - a2c_network
+    stdin_open: true
+    tty: true
 
-# Named volume for persisting PostgreSQL data
+  # AuthService API
+  authservice:
+    build:
+      context: ./Server/AuthService
+      dockerfile: Dockerfile
+    container_name: authservice
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2cdb;Username=postgres;Password=postgres
+      - ASPNETCORE_ENVIRONMENT=Docker
+    ports:
+      - "32774:8080"
+    networks:
+      - a2c_network
+
+  # A2CGateway
+  a2cgateway:
+    build:
+      context: ./Server/A2CGateway
+      dockerfile: Dockerfile
+    container_name: a2cgateway
+    depends_on:
+      - authservice
+    environment:
+      - AuthService__BaseUrl=http://authservice:8080
+      - ASPNETCORE_ENVIRONMENT=Docker
+    ports:
+      - "8080:8080"
+    networks:
+      - a2c_network
+
 volumes:
-  pgdata:
+  db_data:
 
-# Custom bridge network for internal communication between services
 networks:
-  a2cnet:
+  a2c_network:
     driver: bridge

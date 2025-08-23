@@ -1,4 +1,31 @@
 services:
+  authservice:
+    container_name: authservice
+    image: ${DOCKER_REGISTRY-}authservice
+    build:
+      context: ./Server/AuthService
+      dockerfile: Dockerfile
+    ports:
+      - "32774:8080"   # AuthService חשוף זמנית לעולם
+    networks:
+      - a2cnet
+
+  a2cgateway:
+    container_name: a2cgateway
+    image: ${DOCKER_REGISTRY-}a2cgateway
+    build:
+      context: ./Server/A2CGateway
+      dockerfile: Dockerfile
+    ports:
+      - "32775:8080"   # Gateway החשיפה החדשה לעולם
+    environment:
+      - AuthService__BaseUrl=http://authservice:8080
+      - ASPNETCORE_ENVIRONMENT=Docker
+    depends_on:
+      - authservice
+    networks:
+      - a2cnet
+
   ef:
     image: mcr.microsoft.com/dotnet/sdk:8.0
     volumes:
@@ -10,14 +37,11 @@ services:
       - a2cnet
     entrypoint: >
       bash -c "dotnet tool list -g | grep dotnet-ef || dotnet tool install --global dotnet-ef &&
-           dotnet ef database update --project /app/Server/AuthService/AuthService.csproj"
+               dotnet ef database update --project /app/Server/AuthService/AuthService.csproj"
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=a2c_crm;Username=postgres;Password=postgres
       - ASPNETCORE_ENVIRONMENT=Docker
-   
- # client:
- #   volumes:
- #     - ./Client:/app
- #   environment:
- #     - CHOKIDAR_USEPOLLING=true  # watch mode if using React
 
+networks:
+  a2cnet:
+    driver: bridge

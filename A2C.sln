@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "Server\AuthService\AuthService.csproj", "{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A2CGateway", "Server\A2CGateway\A2CGateway.csproj", "{821BCA11-2D17-4485-DC47-C17E6503A63B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDB", "Server\TestDB\TestDB.csproj", "{9E47B407-74E1-258D-E760-B32858B65B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA2FC26F-F50A-9A1B-28DE-B4098A73E25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821BCA11-2D17-4485-DC47-C17E6503A63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821BCA11-2D17-4485-DC47-C17E6503A63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821BCA11-2D17-4485-DC47-C17E6503A63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821BCA11-2D17-4485-DC47-C17E6503A63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E47B407-74E1-258D-E760-B32858B65B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E47B407-74E1-258D-E760-B32858B65B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E47B407-74E1-258D-E760-B32858B65B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E47B407-74E1-258D-E760-B32858B65B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

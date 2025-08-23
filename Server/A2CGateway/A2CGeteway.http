@@ -1,0 +1,6 @@
+@A2CGeteway_HostAddress = http://localhost:5285
+
+GET {{A2CGeteway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
